@@ -12,7 +12,7 @@ Source0:	Gens-gs-r7.tar.bz2
 Source1:	gens-gs.png
 
 BuildRequires:	gtk2-devel
-BuildRequires:	SDL1.2-devel
+BuildRequires:	SDL-devel
 BuildRequires:	zlib-devel
 BuildRequires:	png-devel
 BuildRequires:	gtkglextmm-devel
