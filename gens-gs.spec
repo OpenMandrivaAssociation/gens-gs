@@ -10,6 +10,7 @@ Group:		Emulators
 URL:		http://info.sonicretro.org/Gens/GS
 Source0:	Gens-gs-r7.tar.bz2
 Source1:	gens-gs.png
+Patch0:		gens-gs-r7-gtk-deprecated.patch
 
 BuildRequires:	gtk2-devel
 BuildRequires:	SDL-devel
@@ -33,6 +34,7 @@ from various forks of Gens.
 
 %prep
 %setup -q -n %{name}-r7
+%patch0 -p1
 
 %build
 autoreconf -i
