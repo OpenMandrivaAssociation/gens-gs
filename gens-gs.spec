@@ -18,6 +18,7 @@ BuildRequires:	zlib-devel
 BuildRequires:	png-devel
 BuildRequires:	gtkglextmm-devel
 BuildRequires:	nasm
+BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 Conflicts:	gens
