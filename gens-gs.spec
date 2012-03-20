@@ -1,9 +1,9 @@
-%define sname		gens
-Name:			%{sname}-gs
-Version:		2.16.7
-%define gitdate		20090911
-Release:		%mkrel 2
+%define		sname		gens
+%define		gitdate		20090911
 
+Name:		%{sname}-gs
+Version:	2.16.7
+Release:	%mkrel 2
 Summary:	A Sega Genesis, Sega CD and Sega 32X emulator
 License:	GPLv2+
 Group:		Emulators
@@ -11,7 +11,6 @@ URL:		http://info.sonicretro.org/Gens/GS
 Source0:	Gens-gs-r7.tar.bz2
 Source1:	gens-gs.png
 Patch0:		gens-gs-r7-gtk-deprecated.patch
-
 BuildRequires:	gtk2-devel
 BuildRequires:	SDL-devel
 BuildRequires:	zlib-devel
@@ -19,19 +18,14 @@ BuildRequires:	png-devel
 BuildRequires:	gtkglextmm-devel
 BuildRequires:	nasm
 BuildRequires:	desktop-file-utils
-BuildRoot:	%{_tmppath}/%{name}-%{version}
-
 Conflicts:	gens
-
-ExclusiveArch:	%ix86
+ExclusiveArch:	%{ix86}
 
 %description
 Gens is an emulator for the Sega Genesis, Sega CD and Sega 32X.
-
 Gens/GS is a version of Gens maintained by GerbilSoft.
-
-The main goal of Gens/GS is to clean up the source code and combine features 
-from various forks of Gens.
+The main goal of Gens/GS is to clean up the source code and combine
+features from various forks of Gens.
 
 %prep
 %setup -q -n %{name}-r7
@@ -43,11 +37,8 @@ autoreconf -i
 %make
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall
-
-#mkdir -p %{buildroot}/%{_iconsdir}
-#bzcat %{_sourcedir}/gens-gs.png > %{buildroot}/%{_iconsdir}/gens.png
 
 desktop-file-install --vendor="" \
  --remove-category="Application" \
@@ -56,18 +47,10 @@ desktop-file-install --vendor="" \
  --dir %{buildroot}%{_datadir}/applications/ \
  %{buildroot}%{_datadir}/applications/*
 
-rm -f %{buildroot}%{_libdir}/mdp/*.{a,la}
+%__rm -f %{buildroot}%{_libdir}/mdp/*.{a,la}
 
 %clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-
-%postun
-%{clean_menus}
-%endif
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,0755)
@@ -77,7 +60,6 @@ rm -rf %{buildroot}
 %dir %{_datadir}/gens/
 %{_datadir}/gens/*
 %{_datadir}/applications/gens.desktop
-#{_iconsdir}/%{name}.png
 %{_libdir}/mdp/*.so
 %{_docdir}/*
 
