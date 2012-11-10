@@ -1,0 +1,12 @@
+diff -urN gens-gs-r7/configure.ac gens-gs-r7-patched/configure.ac
+--- gens-gs-r7/configure.ac	2009-11-23 04:00:33.000000000 +1000
++++ gens-gs-r7-patched/configure.ac	2011-07-30 15:31:35.972531351 +1100
+@@ -196,7 +196,7 @@
+ AC_DEFINE(GENS_UI_GTK, 1, Enable the GTK+ UI)
+ 
+ # TODO: Disable deprecated GTK+ features.
+-GTK_CFLAGS="$GTK_CFLAGS -DGTK_DISABLE_DEPRECATED -DDISABLE_DEPRECATED -DGSEAL_ENABLE"
++# GTK_CFLAGS="$GTK_CFLAGS -DGTK_DISABLE_DEPRECATED -DDISABLE_DEPRECATED -DGSEAL_ENABLE"
+ 
+ #elif test x$ui = xqt4; then
+ #
