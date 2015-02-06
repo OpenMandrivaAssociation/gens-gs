@@ -1,7 +1,7 @@
 Summary:	Sega Genesis/Megadrive, Sega CD and Sega 32X emulator
 Name:		gens-gs
 Version:	2.16.7
-Release:	7
+Release:	8
 License:	GPLv2+
 Group:		Emulators
 Url:		http://info.sonicretro.org/Gens/GS
