@@ -4,7 +4,7 @@ Version:	2.16.7
 Release:	8
 License:	GPLv2+
 Group:		Emulators
-Url:		http://info.sonicretro.org/Gens/GS
+Url:		https://info.sonicretro.org/Gens/GS
 Source0:	Gens-gs-r7.tar.bz2
 Patch0:		gens-gs-r7-gtk-deprecated.patch
 BuildRequires:	imagemagick
