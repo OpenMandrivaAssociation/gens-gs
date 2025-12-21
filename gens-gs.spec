@@ -7,6 +7,11 @@ Group:		Emulators
 Url:		https://info.sonicretro.org/Gens/GS
 Source0:	Gens-gs-r7.tar.bz2
 Patch0:		gens-gs-r7-gtk-deprecated.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	nasm
 BuildRequires:	pkgconfig(gl)
